@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.8.0/altspace.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="js/foo-component.js"></script>
+  </head>
+  <body>
+    <a-scene altspace='vertical-align: bottom;'>
+            <!-- <a-entity hello-world></a-entity> -->
+            <a-entity id="mytest" geometry="primitive:box;width:3;" material="color:red;" position="0 2 0">
+              <a-box position="0 0 -2" rotation="0 45 0" color="#4CC3D9"></a-box>
+            </a-entity>
+    </a-scene>
+    <script>
+        document.querySelector('#mytest').setAttribute('hello-world', '');
+    </script>
+  </body>
+</html>
