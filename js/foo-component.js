@@ -13,7 +13,7 @@ AFRAME.registerComponent('hello-world', {
       
       for (var i = 0; i < cards.length; i++) {
      // console.log(cards[i]);
-       cards[i].setAttribute('rotation', '-90 0 0');
+       //cards[i].setAttribute('rotation', '-90 0 0');
 
      }
 

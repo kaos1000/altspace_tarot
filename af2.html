@@ -21,7 +21,7 @@
             <a-animation attribute="rotation"
             dur="10000"
             fill="forwards"
-            to="90 0 90"
+            to="90 0 0"
             repeat="indefinite"></a-animation>
           </a-entity>
      
@@ -29,9 +29,15 @@
                 <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
                 <a-entity id="the_sun" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25; offset: .165 0;"></a-entity>
                 <a-animation attribute="rotation"
-                dur="10000"
+                dur="5000"
                 fill="forwards"
-                to="90 0 90"
+                to="-90 0 0"
+                repeat="indefinite"></a-animation>
+                <a-animation attribute="position"
+                dur="5000"
+                fill="both"
+                from=".4 3 0"
+                to=".4 1 0"
                 repeat="indefinite"></a-animation>
               </a-entity>
 <!--
