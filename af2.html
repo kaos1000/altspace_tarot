@@ -8,12 +8,17 @@
   <body>
     <a-scene altspace='vertical-align: bottom;'>
             <!-- <a-entity hello-world></a-entity> -->
-            <a-entity id="mytest" geometry="primitive:box;width:3;" material="color:red;" position="0 2 0">
-              <a-box position="0 0 -2" rotation="0 45 0" color="#4CC3D9"></a-box>
+            <a-entity id="mytest"  position="0 0 0">
+              <!-- <a-cylinder position="0 1 0" rotation="0 45 0" color="#4CC3D9" width="3"></a-box> -->
+                <!-- Hexagonal prism -->
+<a-entity geometry="primitive: plane;height: .5; width:.25" position="0 1 0" material="side: double;src: images/Rider-Waite-Smith_deck.png; repeat: .165 .25"></a-entity>
+
+
             </a-entity>
     </a-scene>
     <script>
-        document.querySelector('#mytest').setAttribute('hello-world', '');
+       document.querySelector('#mytest').setAttribute('hello-world', '');
+
     </script>
   </body>
 </html>
