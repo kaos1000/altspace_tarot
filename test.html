@@ -1,13 +1,61 @@
 <html>
   <head>
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
-  </head>
-  <body>
-    <a-scene physics>
-      <a-box position="-1 4 -3" rotation="0 45 0" color="#4CC3D9" dynamic-body></a-box>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" static-body></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
-  </body>
-</html>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.8.0/altspace.min.js"></script>
+    <script>
+        // an example custom component, that will change the color when clicked
+        AFRAME.registerComponent('color-cycle', {
+          schema: {},
+          init: function(){
+            var self = this;
+            self.el.object3D.addEventListener('cursorup', function(){
+              var rgb = [
+                Math.floor(Math.random()*256),
+                Math.floor(Math.random()*256),
+                Math.floor(Math.random()*256)
+              ];
+              self.el.setAttribute('color', 'rgb('+rgb.join(',')+')');
+            });
+          }
+        });
+        AFRAME.registerComponent('log', {
+          schema: {type: 'string'},
+          init: function () {
+            var stringToLog = this.data;
+            console.log(stringToLog);
+            var sceneEl = document.querySelector('a-scene');
+            console.log(sceneEl);
+            console.log(sceneEl.querySelector('#redBox'));
+            var els = sceneEl.querySelectorAll('*');
+              for (var i = 0; i < els.length; i++) {
+                console.log(els[i]);
+              }
+
+
+
+                        }
+              });
+        // set up the threejs scene
+        function loadThreeJS(){
+          var sim = new altspace.utilities.Simulation();
+          var cube = new THREE.Mesh(
+            new THREE.BoxGeometry(1, 1, 1),
+            new THREE.MeshBasicMaterial({color: 0x008800})
+          );
+          cube.position.set(-1,1,0);
+          cube.addBehavior( new altspace.utilities.behaviors.HoverColor() );
+          sim.scene.add(cube);
+        }
+      </script>
+    </head>
+    <body onload='loadThreeJS()'>
+  
+      <!-- set up the aframe scene -->
+      <a-scene altspace='vertical-align: bottom;'>
+        <a-box position='1 1 0' color-cycle></a-box>
+        <a-box id="redBox" position='2 2 1' log="Hello, Box!" color="red"></a-box>
+      </a-scene>
+  
+  
+    </body>
+  </html>

@@ -7,17 +7,25 @@
   </head>
   <body>
     <a-scene altspace='vertical-align: bottom;'>
+         <!-- preload all our textures -->
+    <a-assets>
+        <img id='card_back_texture' src='images/back.jpg'/>
+        <img id='major' src='images/Rider-Waite-Smith_deck.png'/>
+       <!-- <img id='minor' src='images/Rider-Waite-Smith_deck.png'/>-->
+    </a-assets>
             <!-- <a-entity hello-world></a-entity> -->
-            <a-entity id="mytest"  position="0 0 0">
-              <!-- <a-cylinder position="0 1 0" rotation="0 45 0" color="#4CC3D9" width="3"></a-box> -->
-                <!-- Hexagonal prism -->
-<a-entity geometry="primitive: plane;height: .5; width:.25" position="0 1 0" material="side: double;src: images/Rider-Waite-Smith_deck.png; repeat: .165 .25"></a-entity>
-
-
+            <a-entity  id="_1"  position="0 1 0"   rotation="-90 0 0">
+            <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
+            <a-entity id="the_moon" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25;offset: 0 0;"></a-entity>
+            </a-entity>
+     
+            <a-entity  id="_2"  position=".4 1 0"   rotation="-90 0 0">
+                <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
+                <a-entity id="the_sun" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25; offset: .165 0;"></a-entity>
             </a-entity>
     </a-scene>
     <script>
-       document.querySelector('#mytest').setAttribute('hello-world', '');
+       document.querySelector('#_1').setAttribute('hello-world', '');
 
     </script>
   </body>
