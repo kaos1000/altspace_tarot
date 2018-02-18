@@ -11,11 +11,11 @@ AFRAME.registerComponent('hello-world', {
      // var new_obj = card_obj.clone();
      // sceneEl.appendChild(card_obj);
       
-      //for (var i = 0; i < cards.length; i++) {
+      for (var i = 0; i < cards.length; i++) {
        // console.log(cards[i]);
-       // cards[i].setAttribute('rotation', '90 0 0');
+       cards[i].setAttribute('rotation', '90 0 0');
 
-     // }
+     }
 
       
     // console.log(sceneEl);
