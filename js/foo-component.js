@@ -2,9 +2,9 @@ AFRAME.registerComponent('hello-world', {
     init: function () {
       var root;
       console.log('Hello, World!');
-     // var sceneEl = document.querySelector('a-scene');
+     var sceneEl = document.querySelector('a-scene');
       //sceneEl.querySelector('.tarot_card').setAttribute('rotation', '90 0 0');
-      //var cards = sceneEl.querySelectorAll('.tarot_card');
+      var cards = sceneEl.querySelectorAll('.tarot_card');
       //console.log(cards);
       //var card_obj = document.querySelector('#_2');
       //console.log(card_obj);
@@ -12,8 +12,8 @@ AFRAME.registerComponent('hello-world', {
      // sceneEl.appendChild(card_obj);
       
       for (var i = 0; i < cards.length; i++) {
-       // console.log(cards[i]);
-       cards[i].setAttribute('rotation', '90 0 0');
+     // console.log(cards[i]);
+       cards[i].setAttribute('rotation', '-90 0 0');
 
      }
 
@@ -30,10 +30,11 @@ AFRAME.registerComponent('hello-world', {
       cylinder.setAttribute('position', i + ' 1 0');
       scene.appendChild(cylinder);
       }
-
+ */ 
     }
+  
   });
-*/
+
   AFRAME.registerComponent('box', {
     schema: {
       width: {type: 'number', default: 1},
