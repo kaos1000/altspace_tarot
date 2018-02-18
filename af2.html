@@ -17,12 +17,23 @@
             <a-entity  id="_1"  position="0 1 0"   rotation="90 0 0" class="tarot_card">
             <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
             <a-entity id="the_moon" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25;offset: 0 0;"></a-entity>
-            </a-entity>
+            
+            <a-animation attribute="rotation"
+            dur="10000"
+            fill="forwards"
+            to="90 0 90"
+            repeat="indefinite"></a-animation>
+          </a-entity>
      
             <a-entity  id="_2"  position=".4 1 0"   rotation="90 0 0" class="tarot_card">
                 <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
                 <a-entity id="the_sun" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25; offset: .165 0;"></a-entity>
-            </a-entity>
+                <a-animation attribute="rotation"
+                dur="10000"
+                fill="forwards"
+                to="90 0 90"
+                repeat="indefinite"></a-animation>
+              </a-entity>
 <!--
             <a-entity box="width: 0.5; height: 0.25; depth: 1; color: orange"
             position="0 2 0"></a-entity>
