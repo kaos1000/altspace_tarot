@@ -19,6 +19,7 @@ AFRAME.registerComponent('hello-world', {
 
       
     // console.log(sceneEl);
+    /*
     var scene = document.querySelector('a-scene');
     var cylinder;
      for (var i = 0; i < 4; i++) {
@@ -32,7 +33,7 @@ AFRAME.registerComponent('hello-world', {
 
     }
   });
-
+*/
   AFRAME.registerComponent('box', {
     schema: {
       width: {type: 'number', default: 1},
