@@ -28,37 +28,42 @@
             <a-entity  id="_2"  position=".4 1 0"   rotation="90 0 0" class="tarot_card">
                 <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
                 <a-entity id="the_sun" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25; offset: .165 0;"></a-entity>
-               <!--
-                <a-animation attribute="rotation"
-                dur="5000"
-                fill="forwards"
-                to="-90 0 0"
-                repeat="indefinite" direction="alternate"></a-animation>
-               -->  
-               <a-animation id="roto_ani" attribute="rotation"
+                 <!--   
+               <a-animation id= attribute="rotation"
                     dur="5000"
                     fill="forwards"
                     to="-90 0 0"
-                    repeat="0" direction="forward"></a-animation>
+                    repeat="0" direction="forward" delay="4000"></a-animation>
+                    -->
                 <a-animation attribute="position"
                 dur="5000"
                 fill="both"
                 from=".4 2 0"
                 to=".4 1 0"
+                repeat="0" direction="forward" delay="4000"></a-animation>              
+              
+                          
+                     <!--     -->
+                <a-animation attribute="rotation"
+                dur="5000"
+                fill="forwards"
+                to="-90 0 0"
                 repeat="0" direction="forward"></a-animation>
-                <!--
+ 
+
+              
                 <a-animation attribute="position"
                 dur="5000"
                 fill="both"
                 from=".4 1 0"
-                to=".4 3 0"
-                repeat="indefinite" direction="reverse"></a-animation>
-                -->
+                to=".4 2 0"
+                repeat="0" direction="forward"></a-animation>
+              
               </a-entity>
-<!--
-            <a-entity box="width: 0.5; height: 0.25; depth: 1; color: orange"
+<!---->
+            <a-entity id="o_box" box="width: 0.5; height: 0.25; depth: 1; color: orange"
             position="0 2 0"></a-entity>
--->
+
     </a-scene>
     <script>
 //console.log(document.querySelector('#roto_ani').sceneEl.object3D);
@@ -66,8 +71,8 @@ var sceneEl = document.querySelector('a-scene');
       //sceneEl.querySelector('.tarot_card').setAttribute('rotation', '90 0 0');
       var roto_ani2 = sceneEl.querySelector('#_2');
 
-roto_ani.addEventListener('animationend', function (event) {
-  console.log('ani started', event.srcElement.id);
+o_box.addEventListener('click', function (event) {
+  console.log('ani started', event);
   pp2.emit('poopevent', 'text', true);
 });
 
