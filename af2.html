@@ -6,7 +6,7 @@
     <script src="js/foo-component.js"></script>
   </head>
   <body>
-    <a-scene altspace='vertical-align: bottom;'>
+    <a-scene altspace='vertical-align: bottom;' sync-system="author: altspacevr; app: asvr-test;refUrl:https://asvr-test.firebaseio.com;">
          <!-- preload all our textures -->
     <a-assets>
         <img id='card_back_texture' src='images/back.jpg'/>
@@ -14,7 +14,7 @@
        <!-- <img id='minor' src='images/Rider-Waite-Smith_deck.png'/>-->
     </a-assets>
              <a-entity hello-world></a-entity>
-            <a-entity  id="_1"  position="0 1 0"   rotation="90 0 0" class="tarot_card">
+            <a-entity  id="_1"  position="0 1 0"   rotation="90 0 0" class="tarot_card" sync sync-transform>
             <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
             <a-entity id="the_moon" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25;offset: 0 0;"></a-entity>
             
@@ -25,7 +25,7 @@
             repeat="0" begin="poopevent" delay="0"></a-animation>
           </a-entity>
      
-            <a-entity  id="_2"  position=".4 1 0"   rotation="90 0 0" class="tarot_card">
+            <a-entity  id="_2"  position=".4 1 0"   rotation="90 0 0" class="tarot_card" sync sync-transform>
                 <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
                 <a-entity id="the_sun" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25; offset: .165 0;"></a-entity>
                  <!--   
