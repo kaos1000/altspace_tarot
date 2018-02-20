@@ -19,18 +19,20 @@ AFRAME.registerComponent('hello-world', {
 
       
     // console.log(sceneEl);
-    /*
+    /* */ 
     var scene = document.querySelector('a-scene');
-    var cylinder;
+    var facedown;
      for (var i = 0; i < 4; i++) {
-      cylinder = document.createElement('a-cylinder');
-      cylinder.setAttribute('color', '#FF9500');
-      cylinder.setAttribute('height', '1');
-      cylinder.setAttribute('radius', '0.25');
-      cylinder.setAttribute('position', i + ' 1 0');
-      scene.appendChild(cylinder);
+      facedown = document.createElement('a-plane');
+      facedown.setAttribute('color', '#FF9500');
+      facedown.setAttribute('height', '.1');
+      facedown.setAttribute('width', '.1');
+      //facedown.setAttribute('height', '1');
+      //facedown.setAttribute('radius', '0.25');
+      facedown.setAttribute('position', i/5 + ' 1 0');
+      scene.appendChild(facedown);
       }
- */ 
+
     }
   
   });
