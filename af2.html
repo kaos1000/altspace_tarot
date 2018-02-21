@@ -80,6 +80,26 @@ pp2.addEventListener('poopevent', function (event) {
   console.log('poop!', event);
  
 });
+
+
+var fanned_cards = sceneEl.querySelectorAll('.fanned_cards');
+for (var i = 0; i < fanned_cards.length; i++) {
+ // console.log(els[i]);
+ fanned_cards[i].addEventListener('mouseenter', function (event) {
+        //console.log('enter!!!!', event);
+        fanned_cards[i].setAttribute('color', '#FF9500');
+       
+       
+      });
+      fanned_cards[i].addEventListener('mouseleave', function (event) {
+        //console.log('enter!!!!', event);
+        fanned_cards[i].setAttribute('color', false);
+       
+      });
+
+
+}
+
 /**/
     </script>
   </body>

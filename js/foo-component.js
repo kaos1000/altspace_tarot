@@ -24,12 +24,15 @@ AFRAME.registerComponent('hello-world', {
     var facedown;
      for (var i = 0; i < 4; i++) {
       facedown = document.createElement('a-plane');
-      facedown.setAttribute('color', '#FF9500');
-      facedown.setAttribute('height', '.1');
-      facedown.setAttribute('width', '.1');
-      //facedown.setAttribute('height', '1');
-      //facedown.setAttribute('radius', '0.25');
-      facedown.setAttribute('position', i/5 + ' 1 0');
+      //facedown.setAttribute('color', '#FF9500');
+      facedown.setAttribute('height', '.5');
+      facedown.setAttribute('width', '.25');
+      facedown.setAttribute('material', 'side: double;src:#card_back_texture; repeat: 1 1');
+      facedown.setAttribute('id', 'card_' + i);
+      facedown.setAttribute('rotation', '90 0 -5');
+      facedown.setAttribute('position', (i + 1)/5 + ' .9 -1');
+      facedown.setAttribute('class', 'fanned_cards');
+      
       scene.appendChild(facedown);
       }
 
