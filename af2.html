@@ -110,26 +110,29 @@ clickable_card.addEventListener('click', function (event) {
   console.log('ani2 started', event);
   clickable_card.emit('peeevent', 'text', true);
 });
-
+/*
 var fanned_cards = sceneEl.querySelectorAll('.fanned_cards');
+var the_card;
 for (var i = 0; i < fanned_cards.length; i++) {
  // console.log(els[i]);
- fanned_cards[i].addEventListener('mouseenter', function (event) {
-        //console.log('enter!!!!', event);
-        fanned_cards[i].setAttribute('color', '#FF9500');
+ the_card = eval(fanned_cards[i]);
+ the_card.addEventListener('mouseenter', function (event) {
+        console.log('enter!!!!', event);
+        the_card.setAttribute('color', '#FF9500');
        
        
       });
-      fanned_cards[i].addEventListener('mouseleave', function (event) {
-        //console.log('enter!!!!', event);
-        fanned_cards[i].setAttribute('color', false);
+      the_card.addEventListener('mouseleave', function (event) {
+        console.log('enter!!!!', event);
+        the_card.setAttribute('color', false);
        
       });
 
 
 }
 
-/**/
+*/
+
     </script>
   </body>
 </html>
