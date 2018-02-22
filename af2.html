@@ -18,11 +18,30 @@
             <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
             <a-entity id="the_moon" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25;offset: 0 0;"></a-entity>
             
-            <a-animation id="pp2" attribute="rotation"
-            dur="5000"
+            <a-animation attribute="position"
+            dur="3000"
+            fill="both"
+            from="0 2 0"
+            to="0 1 0"
+            repeat="0"  direction="forward" delay="5000" begin="poopevent"></a-animation>              
+          
+                      
+                 <!--     -->
+            <a-animation attribute="rotation"
+            dur="3000"
             fill="forwards"
+            
             to="-90 0 0"
-            repeat="0" begin="poopevent" delay="0"></a-animation>
+            repeat="0" delay="3000" direction="forward" begin="poopevent"></a-animation>
+
+
+          
+            <a-animation attribute="position"
+            dur="3000"
+            fill="both"
+            from="0 1 0"
+            to="0 2 0"
+            repeat="0" id="pp3" direction="forward" begin="poopevent"></a-animation>
           </a-entity>
      
             <a-entity  id="_2"  position=".4 1 0"   rotation="90 0 0" class="tarot_card" sync sync-transform>
@@ -74,22 +93,22 @@ var sceneEl = document.querySelector('a-scene');
       var clickable_card = sceneEl.querySelector('#_2');
 roto_ani2.addEventListener('click', function (event) {
   console.log('ani started', event);
-  pp2.emit('poopevent', 'text', true);
+  roto_ani2.emit('poopevent', 'text', true);
 });
 
-pp2.addEventListener('poopevent', function (event) {
+roto_ani2.addEventListener('poopevent', function (event) {
   console.log('poop!', event);
  
 });
 
 
-pp3.addEventListener('peeevent', function (event) {
+clickable_card.addEventListener('peeevent', function (event) {
   console.log('pee!', event);
  
 }); 
 clickable_card.addEventListener('click', function (event) {
   console.log('ani2 started', event);
-  pp3.emit('peeevent', 'text', true);
+  clickable_card.emit('peeevent', 'text', true);
 });
 
 var fanned_cards = sceneEl.querySelectorAll('.fanned_cards');
