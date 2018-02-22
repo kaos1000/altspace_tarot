@@ -14,7 +14,7 @@
        <!-- <img id='minor' src='images/Rider-Waite-Smith_deck.png'/>-->
     </a-assets>
              <a-entity hello-world></a-entity>
-            <a-entity  id="_1"  position="0 1 0"   rotation="90 0 0" class="tarot_card" sync sync-transform>
+            <a-entity  id="_1"  position="0 1 0"   rotation="90 0 0" class="tarot_card" sync-transform altspace-cursor-collider='enabled: true' sync='own-on: click'>
             <a-entity  geometry="primitive: plane;height: .5; width:.25" position="0 0 -.001" material="side: double;src:#card_back_texture; repeat: 1 1"></a-entity>             
             <a-entity id="the_moon" geometry="primitive: plane;height: .5; width:.25" position="0 0 0" material="side: double;src:#major; repeat: .165 .25;offset: 0 0;"></a-entity>
             
@@ -36,42 +36,43 @@
                     repeat="0" direction="forward" delay="4000"></a-animation>
                     -->
                 <a-animation attribute="position"
-                dur="5000"
+                dur="3000"
                 fill="both"
                 from=".4 2 0"
                 to=".4 1 0"
-                repeat="0" direction="forward" delay="4000"></a-animation>              
+                repeat="0"  direction="forward" delay="5000" begin="peeevent"></a-animation>              
               
                           
                      <!--     -->
                 <a-animation attribute="rotation"
-                dur="5000"
+                dur="3000"
                 fill="forwards"
+                
                 to="-90 0 0"
-                repeat="0" direction="forward"></a-animation>
+                repeat="0" delay="3000" direction="forward" begin="peeevent"></a-animation>
  
 
               
                 <a-animation attribute="position"
-                dur="5000"
+                dur="3000"
                 fill="both"
                 from=".4 1 0"
                 to=".4 2 0"
-                repeat="0" direction="forward"></a-animation>
+                repeat="0" id="pp3" direction="forward" begin="peeevent"></a-animation>
               
               </a-entity>
-<!---->
-            <a-entity id="o_box" box="width: 0.5; height: 0.25; depth: 1; color: orange"
+<!--
+            <a-entity visible="false" id="o_box" box="width: 0.5; height: 0.25; depth: 1; color: orange;"
             position="0 2 0" altspace-cursor-collider='enabled: true' sync='own-on: click'></a-entity>
-
+-->
     </a-scene>
     <script>
 //console.log(document.querySelector('#roto_ani').sceneEl.object3D);ol
 var sceneEl = document.querySelector('a-scene');
       //sceneEl.querySelector('.tarot_card').setAttribute('rotation', '90 0 0');
-      var roto_ani2 = sceneEl.querySelector('#_2');
-
-o_box.addEventListener('click', function (event) {
+      var roto_ani2 = sceneEl.querySelector('#_1');
+      var clickable_card = sceneEl.querySelector('#_2');
+roto_ani2.addEventListener('click', function (event) {
   console.log('ani started', event);
   pp2.emit('poopevent', 'text', true);
 });
@@ -81,6 +82,15 @@ pp2.addEventListener('poopevent', function (event) {
  
 });
 
+
+pp3.addEventListener('peeevent', function (event) {
+  console.log('pee!', event);
+ 
+}); 
+clickable_card.addEventListener('click', function (event) {
+  console.log('ani2 started', event);
+  pp3.emit('peeevent', 'text', true);
+});
 
 var fanned_cards = sceneEl.querySelectorAll('.fanned_cards');
 for (var i = 0; i < fanned_cards.length; i++) {
